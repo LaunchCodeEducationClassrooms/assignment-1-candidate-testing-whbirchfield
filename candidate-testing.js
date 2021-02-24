@@ -16,13 +16,13 @@ let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 
-function askForName() {
+function askForName(candidateName) {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question("Please enter your name: ");
   return candidateName;
 }
 
-function askQuestion() {
+function askQuestion(questions) {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 for (let i = 0; i < questions.length; i++) {
     candidateAnswer = input.question(questions[i]);
@@ -31,7 +31,7 @@ for (let i = 0; i < questions.length; i++) {
   return candidateAnswers;  
 }
 
-function gradeQuiz() {
+function gradeQuiz(correctAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let numberOfCorrectAnswers = 0;
 for (let i = 0; i< correctAnswers.length; i++){
