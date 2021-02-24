@@ -3,10 +3,10 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
+let question = "Who was the first American woman in space? ";
+let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 let questions = ["Who was the first American woman in space? ",
   "True or false: 5000 meters = 5 kilometers? ",
@@ -59,8 +59,9 @@ for (let i = 0; i< correctAnswers.length; i++){
 }
 
 function runProgram() {
-  console.log(`\n${askForName(candidateName)}, welcome to the Astronaut Program Training Quiz!\n`);
+ 
   // TODO 1.1c: Ask for candidate's name //
+ console.log(`\n${askForName(candidateName)}, welcome to the Astronaut Program Training Quiz!\n`);
 
   askQuestion(questions);
   gradeQuiz(this.candidateAnswers);
