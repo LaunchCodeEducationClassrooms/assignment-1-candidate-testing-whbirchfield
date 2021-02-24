@@ -16,7 +16,7 @@ let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 
-function askForName(candidateName) {
+function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question("Please enter your name: ");
   return candidateName;
@@ -31,28 +31,41 @@ for (let i = 0; i < questions.length; i++) {
   return candidateAnswers;  
 }
 
-function gradeQuiz(candidateAnswers) {
+function gradeQuiz() {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  let numberOfCorrectAnswers = 0;
 for (let i = 0; i< correctAnswers.length; i++){
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
     console.log(`${i+1}) ${questions[i]} \nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
+    numberOfCorrectAnswers += 1;
+
   } else{
     console.log(`${i+1}) ${questions[i]} \nYour Answer: ${candidateAnswers[i]} -incorrect\nCorrect Answer: ${correctAnswers[i]}\n`);
   }
 }
-
-  let grade;
-  
+  let grade = "";
+  let gradeValue = ((numberOfCorrectAnswers / correctAnswers.length) * 100);
+  //console.log(numberOfCorrectAnswers);
+  if (gradeValue >= 80){
+    grade = String(gradeValue)
+    status = "PASSED";
+  } else{
+    grade = String(gradeValue);
+    status = "FAILED";
+  }
+  console.log(`>>> Overall Grade: ${grade}% ( ${numberOfCorrectAnswers} of ${correctAnswers.length} correct) <<<\n >>> Status: ${status} <<<`);
 
   return grade;
 }
 
 function runProgram() {
-  askForName();
+  console.log(`\n${askForName(candidateName)}, welcome to the Astronaut Program Training Quiz!\n`);
   // TODO 1.1c: Ask for candidate's name //
-  
+
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+  //console.log(grade);
+  
 }
 
 // Don't write any code below this line //
