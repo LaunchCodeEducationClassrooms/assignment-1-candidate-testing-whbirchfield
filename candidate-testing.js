@@ -31,7 +31,7 @@ for (let i = 0; i < questions.length; i++) {
   return candidateAnswers;  
 }
 
-function gradeQuiz(correctAnswers) {
+function gradeQuiz() {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let numberOfCorrectAnswers = 0;
 for (let i = 0; i< correctAnswers.length; i++){
@@ -62,7 +62,7 @@ function runProgram() {
   console.log(`\n${askForName(candidateName)}, welcome to the Astronaut Program Training Quiz!\n`);
   // TODO 1.1c: Ask for candidate's name //
 
-  askQuestion();
+  askQuestion(questions);
   gradeQuiz(this.candidateAnswers);
   //console.log(grade);
   
